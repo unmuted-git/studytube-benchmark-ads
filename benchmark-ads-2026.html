@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Benchmark Ads 2026 (DE) — 6 Konzepte · Studytube × Unmuted</title>
+<style>
+  :root{
+    --navy:#10173f;
+    --navy-2:#1b245e;
+    --ink:#0b1130;
+    --purple:#7a3bff;
+    --blue:#3b46ff;
+    --grad:linear-gradient(135deg,#3b46ff,#7a3bff);
+    --grad-soft:linear-gradient(135deg,#5b63ff,#9a63ff);
+    --paper:#f3f2ef;
+    --li:#0a66c2;
+    --amber:#f5ba2f;
+    --green:#057642;
+    --red:#df704d;
+    --line:rgba(0,0,0,.08);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+    background:var(--paper);padding:32px 20px 90px;color:rgba(0,0,0,.9);
+  }
+  .page{max-width:1480px;margin:0 auto}
+  .pagetitle{font-size:27px;font-weight:700;margin-bottom:6px;letter-spacing:-.3px}
+  .pagesubtitle{color:rgba(0,0,0,.6);font-size:14px;margin-bottom:22px}
+  .intro-note{
+    background:#fff;border-radius:10px;padding:16px 20px;border:1px solid var(--line);
+    margin-bottom:14px;font-size:13px;line-height:1.6;color:rgba(0,0,0,.75);max-width:1040px;
+  }
+  .intro-note strong{color:rgba(0,0,0,.92)}
+  .intro-note code{background:var(--paper);padding:1px 5px;border-radius:4px;font-size:12px}
+  .legend{display:flex;flex-wrap:wrap;gap:14px;margin:14px 0 8px;font-size:12px;color:rgba(0,0,0,.6)}
+  .legend span{display:inline-flex;align-items:center;gap:6px}
+  .chip{width:11px;height:11px;border-radius:3px;display:inline-block}
+  .category{
+    margin-top:40px;margin-bottom:22px;padding-bottom:10px;border-bottom:2px solid var(--li);
+    font-size:19px;font-weight:700;
+  }
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(440px,1fr));gap:34px;align-items:start}
+
+  .ad-wrapper{position:relative}
+  .ad-label{
+    position:absolute;top:-13px;left:14px;background:var(--ink);color:#fff;
+    padding:4px 11px;font-size:11px;font-weight:700;border-radius:11px;letter-spacing:.4px;z-index:3;
+  }
+  .pillar{
+    display:inline-block;margin:2px 0 10px;font-size:11px;font-weight:700;letter-spacing:.5px;
+    text-transform:uppercase;color:#fff;padding:4px 10px;border-radius:6px;background:var(--grad);
+  }
+  .pillar.pain{background:#c0392b}
+  .pillar.proof{background:#057642}
+  .pillar.conv{background:#0a66c2}
+  .pillar.fomo{background:#b8480a}
+  .pillar.prov{background:#7a1fa2}
+  .pillar.tl{background:#1b245e}
+
+  .ad{background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden;box-shadow:0 1px 0 rgba(0,0,0,.04)}
+  .ad-header{padding:11px 14px 0;display:flex;align-items:flex-start;gap:9px}
+  .logo{width:46px;height:46px;border-radius:50%;background:var(--grad);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px;flex-shrink:0}
+  .meta{flex:1;min-width:0}
+  .name{font-weight:700;font-size:13.5px;line-height:1.3}
+  .followers{font-size:11px;color:rgba(0,0,0,.6);margin-top:1px}
+  .sub{font-size:11px;color:rgba(0,0,0,.6);margin-top:1px}
+  .dots{font-size:18px;color:rgba(0,0,0,.55);padding:0 2px}
+  .intro{padding:11px 14px 12px;font-size:13.5px;line-height:1.46}
+  .intro strong{font-weight:700}
+
+  .creative{position:relative;width:100%;aspect-ratio:1/1;background:var(--navy);color:#fff;overflow:hidden;display:flex;flex-direction:column}
+  .cv-pad{padding:38px 40px;display:flex;flex-direction:column;height:100%}
+  .cv-kicker{font-size:13px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;opacity:.7}
+  .cv-brand{position:absolute;left:40px;bottom:30px;display:flex;align-items:center;gap:9px;font-weight:700;font-size:15px;letter-spacing:.2px}
+  .cv-brand .dot{width:26px;height:26px;border-radius:7px;background:var(--grad);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800}
+  .cv-tag{position:absolute;right:40px;bottom:30px;font-size:12px;opacity:.6;font-weight:600}
+  .big{font-weight:800;letter-spacing:-2px;line-height:.92;background:var(--grad-soft);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .glow{position:absolute;border-radius:50%;filter:blur(70px);opacity:.55;pointer-events:none}
+
+  .cta-block{border-top:1px solid var(--line);padding:11px 14px;display:flex;align-items:center;justify-content:space-between;background:var(--paper)}
+  .headline-wrap{flex:1;min-width:0}
+  .headline{font-size:15px;font-weight:700;line-height:1.25;margin-bottom:2px}
+  .domain{font-size:11px;color:rgba(0,0,0,.6)}
+  .cta-btn{border:1px solid var(--li);color:var(--li);background:transparent;border-radius:16px;padding:6px 16px;font-weight:700;font-size:13px;margin-left:10px;white-space:nowrap}
+  .reactions{padding:8px 14px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line);font-size:11px;color:rgba(0,0,0,.6)}
+  .rxn{width:15px;height:15px;border-radius:50%;border:1.5px solid #fff;display:inline-block}
+  .rxn.like{background:var(--li)}.rxn.love{background:var(--red);margin-left:-4px}.rxn.insight{background:var(--amber);margin-left:-4px}
+
+  .copy-strip{margin-top:12px;padding:11px 13px;background:#fff;border:1px solid var(--line);border-radius:8px;font-size:12px}
+  .copy-row{display:flex;align-items:flex-start;gap:9px;padding:5px 0}
+  .copy-row+.copy-row{border-top:1px dashed var(--line)}
+  .copy-tag{font-size:10px;font-weight:700;text-transform:uppercase;background:#e8eef5;color:var(--li);padding:3px 7px;border-radius:4px;letter-spacing:.3px;flex-shrink:0;margin-top:2px;min-width:64px;text-align:center}
+  .copy-body{flex:1;font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,monospace;font-size:12px;line-height:1.5;color:rgba(0,0,0,.85);word-break:break-word;cursor:pointer;padding:4px 6px;border-radius:4px}
+  .copy-body:hover{background:var(--paper)}
+  .copy-body.copied{background:#d1edc2;color:var(--green)}
+  .char-pill{font-size:10px;color:rgba(0,0,0,.5);background:var(--paper);padding:2px 6px;border-radius:3px;margin-left:6px;font-variant-numeric:tabular-nums}
+
+  .note{margin-top:10px;padding:11px 13px;background:#fff8e6;border:1px solid #f0dca0;border-radius:8px;font-size:12px;line-height:1.55;color:#5b4a12}
+  .note b{color:#3d3208}
+  .note .src{display:block;margin-top:6px;font-size:11px;color:#8a7a3a}
+
+  .foot{margin-top:60px;font-size:12px;color:rgba(0,0,0,.5);max-width:1040px;line-height:1.6}
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="pagetitle">Benchmark Ads 2026 — 6 Concepts (German copy)</div>
+  <div class="pagesubtitle">Studytube × Unmuted · LinkedIn Single Image, 1080×1080 · Source: L&amp;D Monitor 2026 Benchmark (1,815 DE responses)</div>
+
+  <div class="intro-note">
+    <strong>For the designer:</strong> Each card shows the LinkedIn preview with the intended visual (1080×1080), rebuilt in HTML/CSS as a layout reference — not a finished asset, but the image idea, hierarchy and data points. Below each one is the click-to-copy ad copy plus a short designer note. <em>The ad copy itself stays in German (Sie-form); everything labelled as a note or instruction is in English.</em><br><br>
+    <strong>Build logic:</strong> The visual carries the provocative number. The intro text raises the bigger problem without repeating that number. The headline closes with a verb. Brand colours: navy <code>#10173f</code> + gradient <code>#3b46ff → #7a3bff</code>. No em dashes, Sie-form, native German tone in all copy.
+  </div>
+  <div class="legend">
+    <span><span class="chip" style="background:#c0392b"></span>Pain</span>
+    <span><span class="chip" style="background:#7a1fa2"></span>Provocation</span>
+    <span><span class="chip" style="background:#b8480a"></span>FOMO / Curiosity</span>
+    <span><span class="chip" style="background:#057642"></span>Social Proof</span>
+    <span><span class="chip" style="background:#0a66c2"></span>Conversion</span>
+    <span><span class="chip" style="background:#1b245e"></span>Thought Leadership</span>
+  </div>
+
+  <div class="category">6 ad concepts · one per best-practice pillar</div>
+  <div class="grid">
+
+    <!-- ============ AD 1 · PROVOKATION ============ -->
+    <div class="ad-wrapper">
+      <div class="ad-label">AD 1</div>
+      <div><span class="pillar prov">Provocation · Theme 3</span></div>
+      <div class="ad">
+        <div class="ad-header"><div class="logo">ST</div><div class="meta"><div class="name">Studytube</div><div class="followers">14.892 Follower</div><div class="sub">Gesponsert</div></div><div class="dots">⋯</div></div>
+        <div class="intro">Führungskräfte sind überzeugt, dass sie Entwicklung fördern. Ihre Teams erleben das oft anders. Diese Lücke entscheidet, ob Lernen wirklich ankommt.</div>
+        <div class="creative">
+          <div class="glow" style="width:340px;height:340px;background:#7a3bff;top:-90px;right:-70px"></div>
+          <div class="cv-pad">
+            <div class="cv-kicker">Die Wahrnehmungslücke</div>
+            <div style="margin-top:26px">
+              <div class="big" style="font-size:88px">69%</div>
+              <div style="font-size:16px;opacity:.85;margin-top:4px;max-width:300px">der Führungskräfte sagen: „Wir fördern Entwicklung aktiv.“</div>
+            </div>
+            <div style="height:1px;background:rgba(255,255,255,.15);margin:22px 0"></div>
+            <div>
+              <div style="font-size:88px;font-weight:800;letter-spacing:-2px;line-height:.92;color:#fff">39%</div>
+              <div style="font-size:16px;opacity:.85;margin-top:4px;max-width:300px">der Mitarbeitenden spüren diese Unterstützung tatsächlich.</div>
+            </div>
+            <div style="margin-top:auto;display:inline-flex;align-self:flex-start;align-items:center;gap:8px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);padding:7px 13px;border-radius:30px;font-size:14px;font-weight:700">
+              <span style="color:#9a63ff">▲</span> 30 Prozentpunkte Lücke
+            </div>
+          </div>
+          <div class="cv-brand"><span class="dot">ST</span> Studytube</div>
+          <div class="cv-tag">L&amp;D Monitor 2026</div>
+        </div>
+        <div class="cta-block"><div class="headline-wrap"><div class="headline">Wie groß ist Ihre Wahrnehmungslücke?</div><div class="domain">studytube.com</div></div><button class="cta-btn">Mehr dazu</button></div>
+        <div class="reactions"><div style="display:flex;align-items:center;gap:4px"><span class="rxn like"></span><span class="rxn love"></span><span class="rxn insight"></span><span style="margin-left:4px">Lena und 63 andere</span></div><div>11 Kommentare</div></div>
+      </div>
+      <div class="copy-strip">
+        <div class="copy-row"><span class="copy-tag">Intro</span><span class="copy-body" onclick="cp(this)">Führungskräfte sind überzeugt, dass sie Entwicklung fördern. Ihre Teams erleben das oft anders. Diese Lücke entscheidet, ob Lernen wirklich ankommt.</span><span class="char-pill">147</span></div>
+        <div class="copy-row"><span class="copy-tag">Headline</span><span class="copy-body" onclick="cp(this)">Wie groß ist Ihre Wahrnehmungslücke?</span><span class="char-pill">36</span></div>
+        <div class="copy-row"><span class="copy-tag">CTA</span><span class="copy-body" onclick="cp(this)">Mehr dazu</span></div>
+      </div>
+      <div class="note"><b>Designer:</b> Strongest provocation concept. Two stacked big numbers (69% on top in the gradient, 39% below in white) split by a clear divider. The "+30 pp" badge is the aha-moment, anchor it bottom-left. A/B idea: render the two numbers as two speech bubbles (manager vs. employee).<span class="src">Source: Theme 3, S4 — 69% vs. 39%, +30 pp (largest gap in the report).</span></div>
+    </div>
+
+    <!-- ============ AD 2 · PAIN ============ -->
+    <div class="ad-wrapper">
+      <div class="ad-label">AD 2</div>
+      <div><span class="pillar pain">Pain · Theme 1</span></div>
+      <div class="ad">
+        <div class="ad-header"><div class="logo">ST</div><div class="meta"><div class="name">Studytube</div><div class="followers">14.892 Follower</div><div class="sub">Gesponsert</div></div><div class="dots">⋯</div></div>
+        <div class="intro">Eine L&amp;D-Strategie zu haben, ist heute Standard. Belegen zu können, dass sie wirkt, ist die Ausnahme. Genau das fragt das MT beim nächsten Budget.</div>
+        <div class="creative" style="background:linear-gradient(160deg,#10173f,#1b245e)">
+          <div class="glow" style="width:300px;height:300px;background:#c0392b;bottom:-80px;left:-60px;opacity:.4"></div>
+          <div class="cv-pad">
+            <div class="cv-kicker">Strategie vs. Wirkung</div>
+            <div style="display:flex;gap:14px;margin-top:30px">
+              <div style="flex:1">
+                <div style="font-size:64px;font-weight:800;letter-spacing:-2px;color:#fff;line-height:.9">70%</div>
+                <div style="font-size:14px;opacity:.8;margin-top:8px">haben eine Form von Strategie</div>
+              </div>
+              <div style="width:1px;background:rgba(255,255,255,.15)"></div>
+              <div style="flex:1">
+                <div class="big" style="font-size:64px">15%</div>
+                <div style="font-size:14px;opacity:.8;margin-top:8px">messen systematisch, ob sie wirkt</div>
+              </div>
+            </div>
+            <div style="margin-top:30px;font-size:22px;font-weight:700;line-height:1.25;max-width:330px">
+              Was Sie nicht messen, können Sie nicht <span style="color:#9a63ff">verteidigen</span>.
+            </div>
+            <div style="margin-top:14px;font-size:13px;opacity:.65;max-width:330px">Strategie auf dem Papier zahlt kein Budget. Nachweisbare Wirkung schon.</div>
+          </div>
+          <div class="cv-brand"><span class="dot">ST</span> Studytube</div>
+          <div class="cv-tag">L&amp;D Monitor 2026</div>
+        </div>
+        <div class="cta-block"><div class="headline-wrap"><div class="headline">Sehen Sie, wie deutsche Teams L&amp;D-Wirkung belegen</div><div class="domain">studytube.com</div></div><button class="cta-btn">Bericht lesen</button></div>
+        <div class="reactions"><div style="display:flex;align-items:center;gap:4px"><span class="rxn like"></span><span class="rxn insight"></span><span style="margin-left:4px">Markus und 34 andere</span></div><div>6 Kommentare</div></div>
+      </div>
+      <div class="copy-strip">
+        <div class="copy-row"><span class="copy-tag">Intro</span><span class="copy-body" onclick="cp(this)">Eine L&D-Strategie zu haben, ist heute Standard. Belegen zu können, dass sie wirkt, ist die Ausnahme. Genau das fragt das MT beim nächsten Budget.</span><span class="char-pill">146</span></div>
+        <div class="copy-row"><span class="copy-tag">Headline</span><span class="copy-body" onclick="cp(this)">Sehen Sie, wie deutsche Teams L&D-Wirkung belegen</span><span class="char-pill">49</span></div>
+        <div class="copy-row"><span class="copy-tag">CTA</span><span class="copy-body" onclick="cp(this)">Bericht lesen</span></div>
+      </div>
+      <div class="note"><b>Designer:</b> Two-column contrast: 70% (white, neutral) against 15% (highlighted in the gradient). The line "Was Sie nicht messen, können Sie nicht verteidigen" is the emotional hook, set it large. Red glow bottom-left subtly signals the risk/pain.<span class="src">Source: Theme 1, Q1 (~70% have a strategy) + Q2 (14.8% measure systematically).</span></div>
+    </div>
+
+    <!-- ============ AD 3 · FOMO ============ -->
+    <div class="ad-wrapper">
+      <div class="ad-label">AD 3</div>
+      <div><span class="pillar fomo">FOMO / Curiosity · Theme 4</span></div>
+      <div class="ad">
+        <div class="ad-header"><div class="logo">ST</div><div class="meta"><div class="name">Studytube</div><div class="followers">14.892 Follower</div><div class="sub">Gesponsert</div></div><div class="dots">⋯</div></div>
+        <div class="intro">Während ein Teil der HR-Teams KI noch beobachtet, plant der andere schon konkret. In 12 bis 24 Monaten wird dieser Abstand sichtbar. Wo stehen Sie?</div>
+        <div class="creative" style="background:linear-gradient(150deg,#161d4e,#10173f)">
+          <div class="glow" style="width:320px;height:320px;background:#3b46ff;top:-80px;left:40%;opacity:.45"></div>
+          <div class="cv-pad">
+            <div class="cv-kicker">KI in der Personalentwicklung</div>
+            <div style="margin-top:24px">
+              <div class="big" style="font-size:96px">42%</div>
+              <div style="font-size:17px;opacity:.85;margin-top:6px;max-width:320px">der HR-Teams investieren bereits gezielt in KI — oder setzen sie schon ein.</div>
+            </div>
+            <div style="margin-top:auto;display:flex;align-items:flex-end;gap:6px;font-size:11px;font-weight:700">
+              <div style="flex:1;text-align:center">
+                <div style="height:8px;border-radius:4px;background:rgba(255,255,255,.25)"></div>
+                <div style="margin-top:7px;opacity:.6">Beobachten</div>
+              </div>
+              <div style="flex:1;text-align:center;position:relative">
+                <div style="height:8px;border-radius:4px;background:rgba(255,255,255,.25)"></div>
+                <div style="margin-top:7px;opacity:.6">Evaluieren</div>
+                <div style="position:absolute;top:-32px;left:50%;transform:translateX(-50%);background:#fff;color:#10173f;font-size:10px;font-weight:800;padding:3px 8px;border-radius:20px;white-space:nowrap">Hier stehen viele ▾</div>
+              </div>
+              <div style="flex:1;text-align:center">
+                <div style="height:8px;border-radius:4px;background:var(--grad-soft)"></div>
+                <div style="margin-top:7px;color:#9a63ff">Planen</div>
+              </div>
+              <div style="flex:1;text-align:center">
+                <div style="height:8px;border-radius:4px;background:var(--grad-soft)"></div>
+                <div style="margin-top:7px;color:#9a63ff">Umsetzen</div>
+              </div>
+            </div>
+          </div>
+          <div class="cv-brand"><span class="dot">ST</span> Studytube</div>
+          <div class="cv-tag">L&amp;D Monitor 2026</div>
+        </div>
+        <div class="cta-block"><div class="headline-wrap"><div class="headline">Sehen Sie, wo Deutschland bei KI in L&amp;D steht</div><div class="domain">studytube.com</div></div><button class="cta-btn">Benchmark</button></div>
+        <div class="reactions"><div style="display:flex;align-items:center;gap:4px"><span class="rxn like"></span><span class="rxn love"></span><span class="rxn insight"></span><span style="margin-left:4px">Sophie und 88 andere</span></div><div>17 Kommentare</div></div>
+      </div>
+      <div class="copy-strip">
+        <div class="copy-row"><span class="copy-tag">Intro</span><span class="copy-body" onclick="cp(this)">Während ein Teil der HR-Teams KI noch beobachtet, plant der andere schon konkret. In 12 bis 24 Monaten wird dieser Abstand sichtbar. Wo stehen Sie?</span><span class="char-pill">148</span></div>
+        <div class="copy-row"><span class="copy-tag">Headline</span><span class="copy-body" onclick="cp(this)">Sehen Sie, wo Deutschland bei KI in L&D steht</span><span class="char-pill">45</span></div>
+        <div class="copy-row"><span class="copy-tag">CTA</span><span class="copy-body" onclick="cp(this)">Benchmark</span></div>
+      </div>
+      <div class="note"><b>Designer:</b> FOMO via a "maturity ladder". 42% as the hero number, below it the 4-step ladder (Beobachten → Evaluieren → Planen → Umsetzen) with a "Hier stehen viele" pin on Evaluieren and the last two steps glowing. Motion/arrow possible in the final asset.<span class="src">Source: Theme 4, Q6 — 42% plan targeted investment / already invest; 28% are evaluating.</span></div>
+    </div>
+
+    <!-- ============ AD 4 · SOCIAL PROOF ============ -->
+    <div class="ad-wrapper">
+      <div class="ad-label">AD 4</div>
+      <div><span class="pillar proof">Social Proof · Benchmark</span></div><!--en-->
+      <div class="ad">
+        <div class="ad-header"><div class="logo">ST</div><div class="meta"><div class="name">Studytube</div><div class="followers">14.892 Follower</div><div class="sub">Gesponsert</div></div><div class="dots">⋯</div></div>
+        <div class="intro">1.815 HR- und L&amp;D-Verantwortliche aus Deutschland haben geantwortet. In 2 Minuten sehen Sie, wo Ihr Team auf Strategie, Lernkultur, Skills und Zukunft steht.</div>
+        <div class="creative" style="background:radial-gradient(120% 120% at 70% 0%,#1b245e,#10173f)">
+          <div class="cv-pad" style="justify-content:center;align-items:flex-start">
+            <div class="cv-kicker" style="position:absolute;top:38px;left:40px">Der Benchmark</div>
+            <div class="big" style="font-size:120px;line-height:.85">1.815</div>
+            <div style="font-size:20px;opacity:.88;margin-top:8px;max-width:330px">HR-Teams aus Deutschland in einem Benchmark.</div>
+            <div style="margin-top:26px;display:flex;flex-wrap:wrap;gap:8px">
+              <span style="font-size:12px;font-weight:700;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);padding:6px 12px;border-radius:20px">Strategie</span>
+              <span style="font-size:12px;font-weight:700;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);padding:6px 12px;border-radius:20px">Lernkultur</span>
+              <span style="font-size:12px;font-weight:700;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);padding:6px 12px;border-radius:20px">Skills</span>
+              <span style="font-size:12px;font-weight:700;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);padding:6px 12px;border-radius:20px">Zukunft</span>
+            </div>
+            <div style="margin-top:28px;font-size:26px;font-weight:800">Wo stehen <span style="color:#9a63ff">Sie</span>?</div>
+          </div>
+          <div class="cv-brand"><span class="dot">ST</span> Studytube</div>
+          <div class="cv-tag">2 Min · kostenlos</div>
+        </div>
+        <div class="cta-block"><div class="headline-wrap"><div class="headline">Benchmarken Sie sich gegen 1.815 deutsche HR-Teams</div><div class="domain">studytube.com</div></div><button class="cta-btn">Starten</button></div>
+        <div class="reactions"><div style="display:flex;align-items:center;gap:4px"><span class="rxn like"></span><span class="rxn love"></span><span class="rxn insight"></span><span style="margin-left:4px">Yvette und 51 andere</span></div><div>9 Kommentare</div></div>
+      </div>
+      <div class="copy-strip">
+        <div class="copy-row"><span class="copy-tag">Intro</span><span class="copy-body" onclick="cp(this)">1.815 HR- und L&D-Verantwortliche aus Deutschland haben geantwortet. In 2 Minuten sehen Sie, wo Ihr Team auf Strategie, Lernkultur, Skills und Zukunft steht.</span><span class="char-pill">156</span></div>
+        <div class="copy-row"><span class="copy-tag">Headline</span><span class="copy-body" onclick="cp(this)">Benchmarken Sie sich gegen 1.815 deutsche HR-Teams</span><span class="char-pill">50</span></div>
+        <div class="copy-row"><span class="copy-tag">CTA</span><span class="copy-body" onclick="cp(this)">Starten</span></div>
+      </div>
+      <div class="note"><b>Designer:</b> Social proof through sheer sample size. "1.815" as a huge hero number, the 4 themes below as pills, and the direct "Wo stehen Sie?" trigger. Optional: drop in the radar/spider chart from the benchmark page as a ghosted background.<span class="src">Source: benchmark page header — 1,815 responses, 4 themes.</span></div>
+    </div>
+
+    <!-- ============ AD 5 · CONVERSION ============ -->
+    <div class="ad-wrapper">
+      <div class="ad-label">AD 5</div>
+      <div><span class="pillar conv">Conversion · Download</span></div>
+      <div class="ad">
+        <div class="ad-header"><div class="logo">ST</div><div class="meta"><div class="name">Studytube</div><div class="followers">14.892 Follower</div><div class="sub">Gesponsert</div></div><div class="dots">⋯</div></div>
+        <div class="intro">Der größte L&amp;D-Branchenreport für Deutschland ist da. 30 Seiten Kohortendaten, Signale über vier Themen und was sich seit letztem Jahr verändert hat.</div>
+        <div class="creative" style="background:linear-gradient(135deg,#10173f,#2a1a5e)">
+          <div class="glow" style="width:300px;height:300px;background:#7a3bff;top:30%;right:-90px"></div>
+          <div class="cv-pad">
+            <div class="cv-kicker">Jetzt verfügbar</div>
+            <div style="margin-top:auto;margin-bottom:auto">
+              <div style="font-size:46px;font-weight:800;letter-spacing:-1px;line-height:1.02">L&amp;D Monitor<br>2026</div>
+              <div style="font-size:16px;opacity:.8;margin-top:12px;max-width:300px">Der Benchmark für HR- und L&amp;D-Verantwortliche in Deutschland.</div>
+              <div style="display:flex;gap:10px;margin-top:24px">
+                <div style="text-align:center"><div class="big" style="font-size:40px">30</div><div style="font-size:11px;opacity:.7;margin-top:2px">Seiten</div></div>
+                <div style="width:1px;background:rgba(255,255,255,.15)"></div>
+                <div style="text-align:center"><div class="big" style="font-size:40px">1.815</div><div style="font-size:11px;opacity:.7;margin-top:2px">Antworten</div></div>
+                <div style="width:1px;background:rgba(255,255,255,.15)"></div>
+                <div style="text-align:center"><div class="big" style="font-size:40px">0&nbsp;€</div><div style="font-size:11px;opacity:.7;margin-top:2px">Kosten</div></div>
+              </div>
+            </div>
+          </div>
+          <div class="cv-brand"><span class="dot">ST</span> Studytube</div>
+          <div class="cv-tag">PDF · Download</div>
+        </div>
+        <div class="cta-block"><div class="headline-wrap"><div class="headline">L&amp;D Monitor 2026 kostenlos herunterladen</div><div class="domain">studytube.com</div></div><button class="cta-btn">Download</button></div>
+        <div class="reactions"><div style="display:flex;align-items:center;gap:4px"><span class="rxn like"></span><span class="rxn love"></span><span style="margin-left:4px">Daniel und 46 andere</span></div><div>5 Kommentare</div></div>
+      </div>
+      <div class="copy-strip">
+        <div class="copy-row"><span class="copy-tag">Intro</span><span class="copy-body" onclick="cp(this)">Der größte L&D-Branchenreport für Deutschland ist da. 30 Seiten Kohortendaten, Signale über vier Themen und was sich seit letztem Jahr verändert hat.</span><span class="char-pill">150</span></div>
+        <div class="copy-row"><span class="copy-tag">Headline</span><span class="copy-body" onclick="cp(this)">L&D Monitor 2026 kostenlos herunterladen</span><span class="char-pill">40</span></div>
+        <div class="copy-row"><span class="copy-tag">CTA</span><span class="copy-body" onclick="cp(this)">Download</span></div>
+      </div>
+      <div class="note"><b>Designer:</b> Clean cover/conversion layout. Report title large, below it three stat-counters (30 Seiten · 1.815 Antworten · 0 €) as a trust trio. Also works as a static cover mockup with a hinted PDF stack on the right.<span class="src">Source: benchmark page footer — "30-page report", free PDF download.</span></div>
+    </div>
+
+    <!-- ============ AD 6 · THOUGHT LEADERSHIP ============ -->
+    <div class="ad-wrapper">
+      <div class="ad-label">AD 6</div>
+      <div><span class="pillar tl">Thought Leadership · Theme 4</span></div>
+      <div class="ad">
+        <div class="ad-header"><div class="logo">ST</div><div class="meta"><div class="name">Studytube</div><div class="followers">14.892 Follower</div><div class="sub">Gesponsert</div></div><div class="dots">⋯</div></div>
+        <div class="intro">Über Skill-Lücken zu sprechen, ist einfach. Sie wirklich sichtbar zu machen, schaffen die wenigsten. Doch genau das ist die Voraussetzung für alles Weitere.</div>
+        <div class="creative" style="background:linear-gradient(160deg,#1b245e,#10173f)">
+          <div class="cv-pad">
+            <div class="cv-kicker">Skill-Transparenz</div>
+            <div style="margin-top:26px;display:grid;grid-template-columns:repeat(5,1fr);gap:12px;max-width:300px">
+              <div style="aspect-ratio:1;border-radius:50%;background:rgba(255,255,255,.13)"></div>
+              <div style="aspect-ratio:1;border-radius:50%;background:rgba(255,255,255,.13)"></div>
+              <div style="aspect-ratio:1;border-radius:50%;background:rgba(255,255,255,.13)"></div>
+              <div style="aspect-ratio:1;border-radius:50%;background:rgba(255,255,255,.13)"></div>
+              <div style="aspect-ratio:1;border-radius:50%;background:var(--grad-soft);box-shadow:0 0 24px rgba(154,99,255,.7)"></div>
+              <div style="aspect-ratio:1;border-radius:50%;background:rgba(255,255,255,.13)"></div>
+              <div style="aspect-ratio:1;border-radius:50%;background:rgba(255,255,255,.13)"></div>
+              <div style="aspect-ratio:1;border-radius:50%;background:rgba(255,255,255,.13)"></div>
+              <div style="aspect-ratio:1;border-radius:50%;background:rgba(255,255,255,.13)"></div>
+              <div style="aspect-ratio:1;border-radius:50%;background:rgba(255,255,255,.13)"></div>
+            </div>
+            <div style="margin-top:26px;font-size:30px;font-weight:800;line-height:1.15;max-width:340px">
+              Nur <span class="big" style="font-size:30px">1 von 10</span> HR-Teams hat einen klaren Skill-Überblick.
+            </div>
+            <div style="margin-top:14px;font-size:14px;opacity:.7;max-width:330px">Ohne diesen Überblick bleiben Messung, Planung und KI-Matching Bauchgefühl.</div>
+          </div>
+          <div class="cv-brand"><span class="dot">ST</span> Studytube</div>
+          <div class="cv-tag">L&amp;D Monitor 2026</div>
+        </div>
+        <div class="cta-block"><div class="headline-wrap"><div class="headline">Warum Skill-Transparenz alles andere ermöglicht</div><div class="domain">studytube.com</div></div><button class="cta-btn">Lesen</button></div>
+        <div class="reactions"><div style="display:flex;align-items:center;gap:4px"><span class="rxn like"></span><span class="rxn insight"></span><span style="margin-left:4px">Annika und 57 andere</span></div><div>13 Kommentare</div></div>
+      </div>
+      <div class="copy-strip">
+        <div class="copy-row"><span class="copy-tag">Intro</span><span class="copy-body" onclick="cp(this)">Über Skill-Lücken zu sprechen, ist einfach. Sie wirklich sichtbar zu machen, schaffen die wenigsten. Doch genau das ist die Voraussetzung für alles Weitere.</span><span class="char-pill">155</span></div>
+        <div class="copy-row"><span class="copy-tag">Headline</span><span class="copy-body" onclick="cp(this)">Warum Skill-Transparenz alles andere ermöglicht</span><span class="char-pill">47</span></div>
+        <div class="copy-row"><span class="copy-tag">CTA</span><span class="copy-body" onclick="cp(this)">Lesen</span></div>
+      </div>
+      <div class="note"><b>Designer:</b> Insight-driven. 10 dots in a grid, only one glowing in the gradient — instantly reads as "1 in 10". The thesis sits below as the key statement. Calmest, most "serious" look of the set, fitting for thought leadership / a senior audience.<span class="src">Source: Theme 4, Q7 — 10% "clear &amp; actively used" (1 in 10).</span></div>
+    </div>
+
+  </div>
+
+  <div class="foot">
+    <strong>All figures from the L&amp;D Monitor 2026 Benchmark (DE), base 1,815 responses.</strong><br>
+    Theme 1 Strategy &amp; Impact · Theme 2 Building L&amp;D · Theme 3 How learning is perceived · Theme 4 Future of L&amp;D.<br>
+    Visuals are HTML/CSS layout references for the design asset, not final assets. Copy: click to copy. Tone of the ad copy: Sie-form, no em dashes, native German idiom (Studytube Brand Guide).
+  </div>
+</div>
+
+<script>
+function cp(el){
+  const t = el.textContent;
+  navigator.clipboard.writeText(t).then(()=>{
+    el.classList.add('copied');
+    setTimeout(()=>el.classList.remove('copied'),900);
+  });
+}
+</script>
+</body>
+</html>
